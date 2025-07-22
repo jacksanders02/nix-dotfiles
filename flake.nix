@@ -10,20 +10,30 @@
     };
   };
   
-  outputs = inputs@{ nixpkgs, home-manager, ... }: {
-    nixosConfigurations.blencathra = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      modules = [ 
-        ./configuration.nix 
+  outputs = inputs@{ self, nixpkgs, home-manager, ... }: {
+    nixosConfigurations = {
+      blencathra = let
+        username = "jacksanders";
+        specialArgs = { inherit username; };
+      in
+        nixpkgs.lib.nixosSystem {
+          inherit specialArgs;
+          system = "x86_64-linux";
+          
+          modules = [ 
+            ./hosts/blencathra
+            ./users/${username}/nixos.nix 
 
-        home-manager.nixosModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
 
-          home-manager.users.jacksanders = import ./home.nix;
-        }
-      ];
+              home-manager.extraSpecialArgs = inputs // specialArgs;
+              home-manager.users.${username} = import ./users/${username}/home.nix;
+            }
+          ];
+        };
     };
   };
 }
