@@ -1,4 +1,4 @@
-{ pkgs, lib, username, ... }:
+{ pkgs, lib, username, inputs, ... }:
 
 {
   # ==== User Setup ==== #
@@ -20,6 +20,19 @@
     automatic = true;
     dates = "weekly";
     options = "--delete-older-than 14d";
+  };
+
+  # Enable automatic upgrades
+  system.autoUpgrade = {
+    enable = true;
+    flake = inputs.self.outPath;
+    flags = [
+      "--update-input"
+      "nixpkgs"
+      "--print-build-logs"
+    ];
+    dates = "02:00";
+    randomizedDelaySec = "45min";
   };
 
   # Allow unfree packages
