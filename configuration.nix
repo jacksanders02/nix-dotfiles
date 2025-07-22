@@ -51,11 +51,15 @@
     variant = "";
   };
 
+  # Enable ZSH
+  programs.zsh.enable = true;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.jacksanders = {
     isNormalUser = true;
     description = "Jack Sanders";
     extraGroups = [ "networkmanager" "wheel" ];
+    shell = pkgs.zsh;
     packages = with pkgs; [];
   };
 
