@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ../../modules/system.nix
+      ../../modules/nvidia.nix
       ./hardware-configuration.nix
     ];
 
