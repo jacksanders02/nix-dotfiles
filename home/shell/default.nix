@@ -3,6 +3,7 @@
 {
   imports = [
     ./zsh.nix
+    ./kitty.nix
   ]; 
   
   home.shellAliases = {
