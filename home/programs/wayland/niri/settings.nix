@@ -71,7 +71,7 @@
       gestures = { hot-corners.enable = true; };
 
       cursor = {
-        size = 20;
+        size = 35;
         theme = "${config.home.pointerCursor.name}";
       };
 
@@ -97,6 +97,10 @@
 
         gaps = 6;
       };
+
+    # Disable window decorations
+    prefer-no-csd = true;
+
     };
   };
 }
