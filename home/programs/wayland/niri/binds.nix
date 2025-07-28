@@ -29,14 +29,15 @@
     "Mod+Shift+S".action.screenshot = {show-pointer = false;};
    
     # ==== Spawn Programs ==== # 
-    "Mod+D".action = spawn "${pkgs.anyrun}/bin/anyrun";
+    "Mod+Space".action = spawn "${pkgs.anyrun}/bin/anyrun";
     "Mod+Return".action = spawn "${pkgs.kitty}/bin/kitty";
+    "Mod+F".action = spawn "${pkgs.nautilus}/bin/nautilus";
 
     "Mod+U".action = spawn "env XDG_CURRENT_DESKTOP=gnome gnome-control-center";
 
     "Mod+C".action = close-window;
     "Mod+S".action = switch-preset-column-width;
-    "Mod+F".action = maximize-column;
+    "Mod+M".action = maximize-column;
 
     "Mod+1".action = set-column-width "25%";
     "Mod+2".action = set-column-width "50%";
@@ -59,6 +60,10 @@
     # ==== Workspace/Column Keybinds ==== #
     "Mod+WheelScrollLeft".action = focus-column-left;
     "Mod+WheelScrollRight".action = focus-column-right;
+    "Mod+Shift+WheelScrollUp".action = focus-column-left;
+    "Mod+Shift+WheelScrollUp".cooldown-ms = 150;
+    "Mod+Shift+WheelScrollDown".action = focus-column-right;
+    "Mod+Shift+WheelScrollDown".cooldown-ms = 150;
     "Mod+WheelScrollUp".action = focus-workspace-up;
     "Mod+WheelScrollUp".cooldown-ms = 150;
     "Mod+WheelScrollDown".action = focus-workspace-down;
