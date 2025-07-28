@@ -8,13 +8,15 @@
         applications
         rink
         shell
-        symbols
         translate
       ];
 
       width.fraction = 0.25;
       y.fraction = 0.3;
+      hidePluginInfo = true;
       closeOnClick = true;
     };
+
+    extraCss = builtins.readFile(./. + "/style-dark.css");
   };
 }
