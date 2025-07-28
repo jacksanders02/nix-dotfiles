@@ -4,6 +4,7 @@
 
     ../../home/programs
     ../../home/shell
+    ../../home/theming
   ];
 
   programs.git = {

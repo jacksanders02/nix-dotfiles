@@ -72,7 +72,7 @@
 
       cursor = {
         size = 20;
-        theme = "Bibata-Original-Ice";
+        theme = "${config.home.pointerCursor.name}";
       };
 
       layout = {
