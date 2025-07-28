@@ -27,10 +27,10 @@
     "Print".action.screenshot-screen = {write-to-disk = true;};
     "Mod+Shift+Alt+S".action = screenshot-window;
     "Mod+Shift+S".action.screenshot = {show-pointer = false;};
-    
+   
+    # ==== Spawn Programs ==== # 
     "Mod+D".action = spawn "${pkgs.anyrun}/bin/anyrun";
     "Mod+Return".action = spawn "${pkgs.kitty}/bin/kitty";
-    "Ctrl+Alt+L".action = spawn "sh -c pgrep hyprlock || hyprlock";
 
     "Mod+U".action = spawn "env XDG_CURRENT_DESKTOP=gnome gnome-control-center";
 
@@ -44,7 +44,6 @@
     "Mod+4".action = set-column-width "100%";
     # "Mod+Shift+F".action = fullscreen-window;
     "Mod+Shift+F".action = expand-column-to-available-width;
-    "Mod+Space".action = toggle-window-floating;
     "Mod+W".action = toggle-column-tabbed-display;
 
     "Mod+Comma".action = consume-window-into-column;
@@ -57,21 +56,19 @@
     "Mod+Shift+Minus".action = set-window-height "-10%";
     "Mod+Shift+Plus".action = set-window-height "+10%";
 
-    "Mod+H".action = focus-column-left;
-    "Mod+L".action = focus-column-right;
-    "Mod+J".action = focus-window-or-workspace-down;
-    "Mod+K".action = focus-window-or-workspace-up;
+    # ==== Workspace/Column Keybinds ==== #
+    "Mod+WheelScrollLeft".action = focus-column-left;
+    "Mod+WheelScrollRight".action = focus-column-right;
+    "Mod+WheelScrollUp".action = focus-workspace-up;
+    "Mod+WheelScrollUp".cooldown-ms = 150;
+    "Mod+WheelScrollDown".action = focus-workspace-down;
+    "Mod+WheelScrollDown".cooldown-ms = 150;
+    
     "Mod+Left".action = focus-column-left;
     "Mod+Right".action = focus-column-right;
     "Mod+Down".action = focus-workspace-down;
     "Mod+Up".action = focus-workspace-up;
-
-    "Mod+Shift+H".action = move-column-left;
-    "Mod+Shift+L".action = move-column-right;
-    "Mod+Shift+K".action = move-column-to-workspace-up;
-    "Mod+Shift+J".action = move-column-to-workspace-down;
-
-    "Mod+Shift+Ctrl+J".action = move-column-to-monitor-down;
-    "Mod+Shift+Ctrl+K".action = move-column-to-monitor-up;
+  
+    "Mod+Shift+Q".action = quit;
   };
 }
