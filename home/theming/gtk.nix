@@ -17,7 +17,7 @@
     enable = true;
     
     theme = {
-      name = "WhiteSur";
+      name = "WhiteSur-Dark";
       package = pkgs.whitesur-gtk-theme;
     };
 

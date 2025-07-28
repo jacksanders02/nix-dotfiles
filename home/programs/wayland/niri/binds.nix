@@ -27,6 +27,7 @@
     "Print".action.screenshot-screen = {write-to-disk = true;};
     "Mod+Shift+Alt+S".action = screenshot-window;
     "Mod+Shift+S".action.screenshot = {show-pointer = false;};
+    "Mod+Shift+C".action = spawn "${pkgs.eyedropper}/bin/eyedropper";
    
     # ==== Spawn Programs ==== # 
     "Mod+Space".action = spawn "${pkgs.anyrun}/bin/anyrun";
@@ -35,7 +36,7 @@
 
     "Mod+U".action = spawn "env XDG_CURRENT_DESKTOP=gnome gnome-control-center";
 
-    "Mod+C".action = close-window;
+    "Mod+Q".action = close-window;
     "Mod+S".action = switch-preset-column-width;
     "Mod+M".action = maximize-column;
 
@@ -49,7 +50,7 @@
 
     "Mod+Comma".action = consume-window-into-column;
     "Mod+Period".action = expel-window-from-column;
-    "Mod+Shift+C".action = center-visible-columns;
+    "Mod+C".action = center-visible-columns;
     "Mod+Tab".action = switch-focus-between-floating-and-tiling;
 
     "Mod+Minus".action = set-column-width "-10%";

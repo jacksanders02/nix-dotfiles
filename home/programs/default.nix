@@ -12,6 +12,7 @@
 
     #==== GNOME ====#
     celluloid # GTK wrapper for mpv
+    dconf-editor
     eyedropper
     file-roller # Archive manager
     gnome-control-center

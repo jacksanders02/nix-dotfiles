@@ -10,6 +10,7 @@
     # General aliases
     cd = "z";
     ll = "eza -l -a --icons --group-directories-first";
+    edit = "gnome-text-editor";
 
     # Git aliases from omz
     g = "git";
