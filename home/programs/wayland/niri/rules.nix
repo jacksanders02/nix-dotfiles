@@ -11,7 +11,7 @@
         top-right = radius;
       };
       clip-to-geometry = true;
-      draw-border-with-backgroud = true;
+      draw-border-with-background = true;
     }
   ];
 in {
