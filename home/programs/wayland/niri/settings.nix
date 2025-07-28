@@ -71,7 +71,7 @@
       gestures = { hot-corners.enable = true; };
 
       cursor = {
-        size = 35;
+        size = 25;
         theme = "${config.home.pointerCursor.name}";
       };
 
