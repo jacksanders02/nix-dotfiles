@@ -10,6 +10,8 @@
     };
 
     niri.url = "github:sodiboo/niri-flake";
+
+    anyrun.url = "github:anyrun-org/anyrun";
   };
   
   outputs = inputs@{ self, nixpkgs, home-manager, niri, ... }: {
