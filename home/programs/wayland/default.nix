@@ -3,6 +3,7 @@
 {
   imports = [
     ./niri
+    ./waybar
   ];
   
   # ==== Wayland-Specific Packages ==== #
@@ -13,6 +14,9 @@
 
     # Utils
     wl-clipboard
+    
+    # Notification Centre
+    swaynotificationcenter
   ];
 
   # Wayland env vars
