@@ -1,6 +1,6 @@
 { inputs, pkgs, ... }: {
   imports = [
-    ./common.nix
+    ./cli.nix
     ./git.nix
     ./anyrun
     ./wayland
@@ -22,8 +22,7 @@
     nautilus # File manager
     (papers.override { supportNautilus = true; }) # Document viewer
     pwvucontrol # pavucontrol with pipewire instead of pulse
+    pamixer
     resources
-
-    #==== Misc ====#
   ];
 }

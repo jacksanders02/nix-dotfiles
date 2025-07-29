@@ -8,14 +8,26 @@
     zip
     unzip
     
-    # Handy utilities
+    # Handy system utils
+    du-dust # ncdu alternative?
+    duf # Free space finder
     eza # ls replacement
+    fd # Faster 'find'
+    file # Find type of files
+    ncdu
     ripgrep # Recursive search
     which
     zoxide # Better cd
 
+    # Fun utils
+    meteor-git # Tool for writing conventional commits
+
     # Monitoring
     btop # Better htop
+    
+    # Dependencies
+    libnotify
+    fontconfig
   ];
 
   programs = {
