@@ -68,15 +68,17 @@
     packages = with pkgs; [
       # Icon fonts
       material-design-icons
-    
-      noto-fonts
-      noto-fonts-cjk-sans
-      noto-fonts-emoji
-
       nerd-fonts.symbols-only
       nerd-fonts.fira-code
       nerd-fonts.jetbrains-mono
       nerd-fonts.iosevka
+    
+      # Noto
+      noto-fonts
+      noto-fonts-cjk-sans
+      noto-fonts-emoji
+    
+      inter
     ];
   
     # Use user-defined fonts rather than defaults
@@ -85,7 +87,7 @@
     # User-defined fonts
     fontconfig.defaultFonts = {
       serif = ["Noto Serif" "Noto Color Emoji"];
-      sansSerif = ["Noto Sans" "Noto Color Emoji"];
+      sansSerif = ["Inter" "Noto Sans" "Noto Color Emoji"];
       monospace = ["JetBrainsMono Nerd Font" "Noto Color Emoji"];
       emoji = ["Noto Color Emoji"];
     };
@@ -123,7 +125,10 @@
   environment.variables.EDITOR = "vim";
 
   # ==== System Services ==== #
+  hardware.bluetooth.enable = true;
   services = {
+    blueman.enable = true;
+  
     pipewire = {
       enable = true;
       alsa.enable = true;
