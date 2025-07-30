@@ -19,6 +19,7 @@
       }; 
       
       spawn-at-startup = [
+        { command = ["waybar"]; }
         { command = ["wl-paste" "--watch" "cliphist" "store"]; }
         { command = ["wl-paste" "--type text" "--watch" "cliphist" "store"]; }
       ];
@@ -36,7 +37,7 @@
           max-scroll-amount = "90%";
         };
 
-        warp-mouse-to-focus.enable = true;
+        warp-mouse-to-focus.enable = false;
         workspace-auto-back-and-forth = true;
       };
 
