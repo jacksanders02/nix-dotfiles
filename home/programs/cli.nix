@@ -15,6 +15,7 @@
     fd # Faster 'find'
     file # Find type of files
     imagemagick # magic
+    ffmpeg
     ncdu
     ripgrep # Recursive search
     which
