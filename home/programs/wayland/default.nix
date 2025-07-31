@@ -4,6 +4,7 @@
   imports = [
     ./niri
     ./waybar
+    ./wofi
   ];
   
   # ==== Wayland-Specific Packages ==== #

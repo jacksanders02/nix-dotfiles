@@ -14,6 +14,7 @@
     eza # ls replacement
     fd # Faster 'find'
     file # Find type of files
+    imagemagick # magic
     ncdu
     ripgrep # Recursive search
     which
