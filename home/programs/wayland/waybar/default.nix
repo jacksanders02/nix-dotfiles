@@ -24,7 +24,6 @@
 
         modules-center = [
           "clock"
-          "custom/notification"
         ];
 
         modules-right = [
@@ -35,13 +34,14 @@
           "pulseaudio"
           "pulseaudio#microphone"
           "battery"
+          "custom/notification"
         ];
 
         backlight = {
           interval = 2;
           align = 0;
           rotate = 0;
-          format = "{icon} {percent}%";
+          format = "{icon}  {percent}%";
           format-icons = ["󰃞" "󰃟" "󰃝" "󰃠"];
           icon-size = 10;
           on-scroll-up = "brightnessctl set +5%";
@@ -61,10 +61,10 @@
             critical = 20;
           };
           format = "<big>{icon}</big>  {capacity}%";
-          format-charging = " {capacity}%";
-          format-plugged = " {capacity}%";
-          format-full = "{icon} Full";
-          format-alt = "{icon} {time}";
+          format-charging = "  {capacity}%";
+          format-plugged = "  {capacity}%";
+          format-full = "{icon}  Full";
+          format-alt = "{icon}  {time}";
           format-icons = [
             ""
             ""
@@ -79,17 +79,17 @@
 
         bluetooth = {
           format = "";
-          format-connected = " {num_connections}";
-          tooltip-format = " {device_alias}";
+          format-connected = "  {num_connections}";
+          tooltip-format = "  {device_alias}";
           tooltip-format-connected = "{device_enumerate}";
           tooltip-format-enumerate-connected = "Name: {device_alias}\nBattery: {device_battery_percentage}%";
           on-click = "blueman-manager";
         };
 
         clock = {
-          format = "{:%b %d %H:%M}";
-          format-alt = " {:%H:%M   %Y, %d %B, %A}";
-          tooltip-format = "<tt><small>{calendar}</small></tt>";
+          format = "{:%a %d %b %H:%M}";
+          format-alt = "  {:%H:%M    %A, %d %B %Y}";
+          tooltip-format = "<tt><small><span font='FiraCode Nerd Font Mono'>{calendar}</span></small></tt>";
           calendar = {
             mode = "year";
             mode-mon-col = 3;
@@ -106,26 +106,14 @@
         };
 
         cpu = {
-          format = "󰍛 {usage}%";
+          format = "󰍛  {usage}%";
           interval = 1;
-        };
-
-        "hyprland/language" = {
-          format = "{short}";
-        };
-
-        "hyprland/workspaces" = {
-          all-outputs = true;
-          format = "{name}";
-          on-click = "activate";
-          show-special = false;
-          sort-by-number = true;
         };
 
         memory = {
           interval = 10;
-          format = "󰾆 {used:0.1f}G";
-          format-alt = "󰾆 {percentage}%";
+          format = "󰾆  {used:0.1f}G";
+          format-alt = "󰾆  {percentage}%";
           format-alt-click = "click";
           tooltip = true;
           tooltip-format = "{used:0.1f}GB/{total:0.1f}G";
@@ -143,7 +131,7 @@
         };
 
         pulseaudio = {
-          format = "{icon} {volume}%";
+          format = "{icon}";
           format-muted = "";
           format-icons = {
             default = [
@@ -159,16 +147,18 @@
           on-click-right = "pamixer -t";
           smooth-scrolling-threshold = 1;
           ignored-sinks = ["Easy Effects Sink"];
+          tooltip-format = "{desc}, {volume}%";
         };
 
         "pulseaudio#microphone" = {
           format = "{format_source}";
-          format-source = " {volume}%";
+          format-source = "";
           format-source-muted = "";
           on-click = "pwvucontrol";
           on-click-right = "pamixer --default-source -t";
           on-scroll-up = "pamixer --default-source -i 5";
           on-scroll-down = "pamixer --default-source -d 5";
+          tooltip-format-source = "{desc}, {volume}%";
         };
 
         temperature = {
@@ -176,8 +166,8 @@
           tooltip = false;
           hwmon-path = "/sys/class/hwmon/hwmon1/temp1_input";
           critical-threshold = 82;
-          format-critical = "{icon} {temperatureC}°C";
-          format = "󰈸 {temperatureC}°C";
+          format-critical = "{icon}  {temperatureC}°C";
+          format = "󰈸  {temperatureC}°C";
         };
 
         tray = {
@@ -217,6 +207,8 @@
       };
     };
     style = ''
+      @import "/home/jacksanders/.cache/wal/colors-waybar.css";
+    
       * {
         font-family: Inter, "JetBrainsMono Nerd Font";
         font-weight: bold;
@@ -232,13 +224,9 @@
         margin-top: 1px;
         margin-bottom: 1px;
       }
-
-      window#waybar {
+      
+      windows#waybar {
         background: rgba(0, 0, 0, 0);
-      }
-
-      window#waybar.hidden {
-        opacity: 0.5;
       }
 
       tooltip {
@@ -255,19 +243,23 @@
       .modules-right,
       .modules-center,
       .modules-left {
-        background-color: rgba(24, 25, 38, 0.7);
+        background: @background;
         border: 0px solid #b4befe;
         border-radius: 8px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        /* backdrop-filter: blur(8px); */
+        /* border: 1px solid rgba(255, 255, 255, 0.33); */
+        color: @cursor;
       }
 
       #workspaces button {
         padding: 2px;
-        color: #6e738d;
+        color: @color1;
         margin-right: 5px;
       }
 
       #workspaces button.active {
-        color: #dfdfdf;
+        color: @foreground;
         border-radius: 3px 3px 3px 3px;
       }
 
@@ -299,7 +291,7 @@
       #temperature,
       #tray,
       #workspaces {
-        color: #dfdfdf;
+        color: @color5;
         padding: 0px 10px;
         border-radius: 8px;
       }
