@@ -1,4 +1,4 @@
-{...}: {
+{config, ...}: {
   # Install and configure waybar via home-manager module
   programs.waybar = {
     enable = true;
@@ -207,7 +207,7 @@
       };
     };
     style = ''
-      @import "/home/jacksanders/.cache/wal/colors-waybar.css";
+      @import "${config.home.homeDirectory}/.cache/wal/colors-waybar.css";
     
       * {
         /* Ignore GTK Theme */
