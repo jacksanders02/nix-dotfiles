@@ -210,6 +210,9 @@
       @import "/home/jacksanders/.cache/wal/colors-waybar.css";
     
       * {
+        /* Ignore GTK Theme */
+        background: initial;
+        
         font-family: Inter, "JetBrainsMono Nerd Font";
         font-weight: bold;
         min-height: 0;
@@ -225,8 +228,8 @@
         margin-bottom: 1px;
       }
       
-      windows#waybar {
-        background: rgba(0, 0, 0, 0);
+      windows, windows#waybar {
+        background: transparent;
       }
 
       tooltip {
