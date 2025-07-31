@@ -120,6 +120,9 @@
     git
     sysstat
     lm_sensors 
+    
+    # swww (from gh install page)
+    inputs.swww.packages.${pkgs.system}.swww
   ];
 
   environment.variables.EDITOR = "vim";

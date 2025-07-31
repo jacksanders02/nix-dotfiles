@@ -78,6 +78,12 @@ if [ -n "$selected" ]; then
 
     # Ensure a valid wallpaper was found before proceeding
     if [ -n "$original_path" ]; then
+        # Update colour schemes with pywal
+        wal -i $original_path
+  
+        # Update wallpaper with swww
+        swww img $original_path --transition-type any --transition-fps 144
+        
         # Save the selection for persistence
         echo "$original_path" > "$HOME/.cache/current_wallpaper"
 

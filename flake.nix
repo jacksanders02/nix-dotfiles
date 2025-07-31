@@ -12,6 +12,8 @@
     niri.url = "github:sodiboo/niri-flake";
 
     anyrun.url = "github:anyrun-org/anyrun";
+    
+    swww.url = "github:LGFae/swww";
   };
   
   outputs = inputs@{ self, nixpkgs, home-manager, niri, ... }: {
