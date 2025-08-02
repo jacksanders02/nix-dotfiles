@@ -4,6 +4,9 @@
     ./git.nix
     ./anyrun
     ./wayland
+    
+    ./browsers/zen
+    ./browsers/firefox
   ];
 
   home.packages = with pkgs; [

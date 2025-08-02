@@ -33,6 +33,7 @@
     "Mod+Space".action = spawn "${pkgs.anyrun}/bin/anyrun";
     "Mod+Return".action = spawn "${pkgs.kitty}/bin/kitty";
     "Mod+F".action = spawn "${pkgs.nautilus}/bin/nautilus";
+    "Mod+W".action = spawn "${pkgs.firefox-devedition}/bin/firefox-devedition";
 
     "Mod+U".action = spawn "env XDG_CURRENT_DESKTOP=gnome gnome-control-center";
 
@@ -46,7 +47,6 @@
     "Mod+4".action = set-column-width "100%";
     # "Mod+Shift+F".action = fullscreen-window;
     "Mod+Shift+F".action = expand-column-to-available-width;
-    "Mod+W".action = toggle-column-tabbed-display;
 
     "Mod+Comma".action = consume-window-into-column;
     "Mod+Period".action = expel-window-from-column;

@@ -8,12 +8,24 @@
       url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    
+    zen-browser = {
+      url = "github:pfaj/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     niri.url = "github:sodiboo/niri-flake";
 
     anyrun.url = "github:anyrun-org/anyrun";
     
     swww.url = "github:LGFae/swww";
+    
+    betterfox.url = "github:HeitorAugustoLN/betterfox-nix";
+    
+    firefox-addons = {
+      url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   
   outputs = inputs@{ self, nixpkgs, home-manager, niri, ... }: {
