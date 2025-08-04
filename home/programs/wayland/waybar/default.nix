@@ -171,7 +171,9 @@
         };
 
         tray = {
-          spacing = 20;
+          spacing = 15;
+          # Add items right-to-left
+          reverse-direction = true;
         };
 
         "custom/notification" = {
