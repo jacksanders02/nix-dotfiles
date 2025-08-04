@@ -27,5 +27,7 @@
     pwvucontrol # pavucontrol with pipewire instead of pulse
     pamixer
     resources
+    
+    networkmanagerapplet # Edit nm connections with nm-connection-editor
   ];
 }
