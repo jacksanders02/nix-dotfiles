@@ -123,6 +123,8 @@
     
     # swww (from gh install page)
     inputs.swww.packages.${pkgs.system}.swww
+    
+    protonvpn-gui
   ];
 
   environment.variables.EDITOR = "vim";
