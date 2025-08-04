@@ -210,9 +210,6 @@
       @import "${config.home.homeDirectory}/.cache/wal/colors-waybar.css";
     
       * {
-        /* Ignore GTK Theme */
-        background: initial;
-        
         font-family: Inter, "JetBrainsMono Nerd Font";
         font-weight: bold;
         min-height: 0;
@@ -228,7 +225,7 @@
         margin-bottom: 1px;
       }
       
-      windows, windows#waybar {
+      window#waybar {
         background: transparent;
       }
 
