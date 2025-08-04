@@ -119,6 +119,7 @@
         { app-id = "xdg-desktop-portal-gtk"; }
         { app-id = "org.kde.polkit-kde-authentication-agent-1"; }
         { app-id = "pinentry"; }
+        { app-id = "vesktop"; }
         { title = "Progress"; }
         { title = "File Operations"; }
         { title = "Copying"; }
@@ -172,6 +173,15 @@
       ];
       default-column-width = {fixed = 250;};
       default-window-height = {fixed = 350;};
+    }
+    
+    {
+      matches = [
+        { app-id = "vesktop"; }
+      ];
+      
+      default-column-width = {fixed = 1280;};
+      default-window-height = {fixed = 720;};
     }
   ];
 in {
