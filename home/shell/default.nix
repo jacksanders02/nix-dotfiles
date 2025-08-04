@@ -16,7 +16,9 @@
     g = "git";
     ga = "git add";
     gb = "git branch";
-    gc = "git commit -v";
+    gc = "meteor";
+    gcm = "git commit -v";
+    gca = "git commit --amend";
     gco = "git checkout";
     gcl = "git clone --recurse-submodules";
     gcp = "git cherry-pick";
