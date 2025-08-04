@@ -139,15 +139,39 @@
       matches = [
         { app-id = "com.saivert.pwvucontrol"; }
         { app-id = "blueman-manager"; }
+        { app-id = "nm-connection-editor"; }
+        { app-id = "nm-applet"; }
       ];
-      # also add network manager stuff
       default-floating-position = {
         x = 6;
         y = 6;
         relative-to = "top-right";
       };
-      default-column-width = {fixed = 500;};
+    }
+    
+    {
+      matches = [
+        { app-id = "com.saivert.pwvucontrol"; }
+      ];
+      default-column-width = {fixed = 550;};
       default-window-height = {fixed = 700;};
+    }
+    
+    {
+      matches = [
+        { app-id = "blueman-manager"; }
+      ];
+      default-column-width = {fixed = 500;};
+      default-window-height = {fixed = 350;};
+    }
+    
+    {
+      matches = [
+        { app-id = "nm-connection-editor"; }
+        { app-id = "nm-applet"; }
+      ];
+      default-column-width = {fixed = 250;};
+      default-window-height = {fixed = 350;};
     }
   ];
 in {
