@@ -21,6 +21,7 @@
       spawn-at-startup = [
         { command = ["waybar"]; }
         { command = ["swww-daemon"]; }
+        { command = ["nm-applet"]; }
         { command = ["wl-paste" "--watch" "cliphist" "store"]; }
         { command = ["wl-paste" "--type text" "--watch" "cliphist" "store"]; }
       ];
