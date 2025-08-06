@@ -1,6 +1,8 @@
-{ pkgs, inputs, ... }: 
+{ config, pkgs, inputs, ... }: 
 
-{
+let
+  walImport = ''@import "${config.home.homeDirectory}/.cache/wal/colors-waybar.css";'';
+in {
   programs.anyrun = {
     enable = true;
     config = {
@@ -17,6 +19,6 @@
       closeOnClick = true;
     };
 
-    extraCss = builtins.readFile(./. + "/style-dark.css");
+    extraCss = walImport + "\n" + builtins.readFile ./style.css;
   };
 }

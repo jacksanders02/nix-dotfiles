@@ -1,6 +1,11 @@
-{ pkgs, config, lib, ... }: {
+{ pkgs, config, lib, ... }: 
+
+let
+  walImport = ''@import "${config.home.homeDirectory}/.cache/wal/colors-waybar.css";'';
+in {
   programs.wofi = {
     enable = true;
+    style = walImport + "\n" + builtins.readFile ./style.css;
   };
   
   # Copy config files across
