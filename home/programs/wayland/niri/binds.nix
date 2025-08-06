@@ -63,6 +63,9 @@
 
     "Mod+Comma".action = consume-window-into-column;
     "Mod+Period".action = expel-window-from-column;
+    
+    "Mod+Shift+Down".action = move-window-to-workspace-down;
+    "Mod+Shift+Up".action = move-window-to-workspace-up;
 
     # ==== Change Focus ==== #
     "Mod+WheelScrollLeft".action = focus-column-left;
