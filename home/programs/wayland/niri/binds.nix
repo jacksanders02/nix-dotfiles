@@ -39,6 +39,7 @@
     # ==== Overview/Launcher/Finder ==== #
     "Mod+Tab".action = toggle-overview;
     "Mod+Space".action = spawn "${pkgs.anyrun}/bin/anyrun";
+    "Mod+Semicolon".action = spawn "~/.scripts/wofi/wofi-emoji";
 
     # ==== Adjust Windows ==== #
     "Mod+1".action = set-column-width "25%";

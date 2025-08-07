@@ -1,0 +1,24 @@
+#!/usr/bin/env zsh
+set -euo pipefail
+
+EMOJI_FILE=$HOME/.config/wofi/emoji-picker/emoji.data
+PRE_DISPLAY_COMMAND='printf "%s\n" "%s" | cut -d " " -f 1 | tr -d "\n"'
+
+EMOJI="$(
+  cat "$EMOJI_FILE" |
+  wofi \
+    --show dmenu \
+    -p "Choose an Emoji" \
+    -M multi-contains \
+    -i \
+    -W 300 \
+    -w 8 \
+    -L 8 \
+    --style ~/.config/wofi/emoji-picker/style.css \
+    --pre-display-cmd $PRE_DISPLAY_COMMAND |
+  cut -d ' ' -f 1 |
+  tr -d '\n'
+)"
+
+wtype "$EMOJI"
+wl-copy "$EMOJI"

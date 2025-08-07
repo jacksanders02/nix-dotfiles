@@ -15,6 +15,7 @@
 
     # Utils
     wl-clipboard
+    wtype
     
     # Notification Centre
     swaynotificationcenter
