@@ -46,6 +46,20 @@
       screenshot-path = "~/Pictures/screenshots/screenshot_%Y-%m-%d-%H%M%S.png";
 
       outputs = {
+        # Laptop
+        "eDP-1" = {
+          mode = {
+            width = 1920;
+            height = 1080;
+          };
+          scale = 1.0;
+          position = {
+            x = 0;
+            y = 0;
+          };
+        };
+      
+        # PC
         "DP-4" = {
           mode = {
             width = 2560;
