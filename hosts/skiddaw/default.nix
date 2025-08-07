@@ -13,6 +13,8 @@
       ./hardware-configuration.nix
     ];
 
+  hardware.graphics.enable = true;
+
   # ==== Bootloader Settings ---- #
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
