@@ -33,4 +33,10 @@
   home.sessionVariables = {
     XDG_ICON_DIR = "${pkgs.whitesur-icon-theme}/share/icons/WhiteSur";
   };
+  
+  dconf.settings = {
+    "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
+    };	
+  };
 }
