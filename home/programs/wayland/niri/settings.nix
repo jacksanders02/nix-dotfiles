@@ -1,25 +1,13 @@
 { 
   config, 
-  pkgs, 
+  pkgs,
+  rootPath,
   ...
 }: {
-  # Add swaybg as systemd service
-  systemd.user.services.swaybg = {
-    Unit = {
-      Description = "SwayBG user service.";
-      After = "graphical-session.target";
-      PartOf = "graphical-session.target";
-      Requisite = "graphical-session.target";
-    };
+  imports = [
+    (rootPath + /services/swaybg.nix)
+  ];
 
-    Install.WantedBy = [ "niri.service" ];
-
-    Service = {
-        Type = "simple";
-        ExecStart = ''${pkgs.swaybg}/bin/swaybg -m fill -i "%h/.cache/wallpaper-picker/blurred-wallpaper.png"'';
-    };
-  };
-  
   programs.niri = {
     enable = true;
     package = pkgs.niri;

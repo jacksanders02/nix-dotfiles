@@ -32,7 +32,8 @@
     nixosConfigurations = {
       blencathra = let
         username = "jacksanders";
-        specialArgs = { inherit username; inherit inputs; };
+        rootPath = ./.;
+        specialArgs = { inherit username; inherit inputs; inherit rootPath; };
       in
         nixpkgs.lib.nixosSystem {
           inherit specialArgs;
@@ -55,7 +56,8 @@
         
       skiddaw = let
         username = "jacksanders";
-        specialArgs = { inherit username; inherit inputs; };
+        rootPath = ./.;
+        specialArgs = { inherit username; inherit inputs; inherit rootPath; };
       in
         nixpkgs.lib.nixosSystem {
           inherit specialArgs;
