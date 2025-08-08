@@ -4,8 +4,11 @@
   rootPath,
   ...
 }: {
+  # Import required systemd services
   imports = [
     (rootPath + /services/swaybg.nix)
+    (rootPath + /services/nm-applet.nix)
+    (rootPath + /services/waybar.nix)
   ];
 
   programs.niri = {
@@ -24,9 +27,7 @@
       }; 
       
       spawn-at-startup = [
-        { command = ["waybar"]; }
         { command = ["swww-daemon"]; }
-        { command = ["nm-applet"]; }
         { command = ["wl-paste" "--watch" "cliphist" "store"]; }
         { command = ["wl-paste" "--type text" "--watch" "cliphist" "store"]; }
       ];
