@@ -1,4 +1,10 @@
 {config, ...}: {
+  # Copy custom config files across first
+  home.file."${config.xdg.configHome}/waybar" = {
+    source = ./.config;
+    recursive = true;
+  };
+
   # Install and configure waybar via home-manager module
   programs.waybar = {
     enable = true;
@@ -15,6 +21,7 @@
         margin-right = 4;
 
         modules-left = [
+          "custom/power"
           "niri/workspaces"
           "cpu"
           "temperature"
@@ -206,6 +213,22 @@
           interval = 1;
           on-click = "screen-recorder";
         };
+        
+        
+        "custom/power" = {
+          format = "⏻";
+          tooltip = false;
+          menu = "on-click";
+          menu-file = "${config.home.homeDirectory}/.config/waybar/modules/power-menu.xml";
+          menu-actions = {
+            shutdown = "shutdown -h now";
+            reboot = "reboot";
+            suspend = "systemctl suspend";
+            lock = "";
+            logout = "logout";
+            # hibernate = "systemctl hibernate"
+          };
+        };
       };
     };
     style = ''
@@ -251,7 +274,12 @@
         box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
         /* backdrop-filter: blur(8px); */
         /* border: 1px solid rgba(255, 255, 255, 0.33); */
-        color: @cursor;
+        color: @color5;
+      }
+      
+      .module {
+        padding: 0px 10px;
+        border-radius: 8px;
       }
 
       #workspaces button {
@@ -277,25 +305,6 @@
       #workspaces button:hover {
         color: #dfdfdf;
         border-radius: 3px;
-      }
-
-      #backlight,
-      #battery,
-      #bluetooth,
-      #clock,
-      #cpu,
-      #custom-notification,
-      #custom-recorder,
-      #language,
-      #memory,
-      #privacy,
-      #pulseaudio,
-      #temperature,
-      #tray,
-      #workspaces {
-        color: @color5;
-        padding: 0px 10px;
-        border-radius: 8px;
       }
 
       #temperature.critical {
