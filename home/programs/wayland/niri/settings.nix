@@ -28,6 +28,7 @@
 
       input = {
         touchpad = {
+          accel-profile = "flat";
           click-method = "button-areas";
           natural-scroll = true;
           scroll-method = "two-finger";
