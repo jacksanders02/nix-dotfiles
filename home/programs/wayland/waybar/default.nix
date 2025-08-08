@@ -60,7 +60,7 @@
             warning = 30;
             critical = 20;
           };
-          format = "<big>{icon}</big>  {capacity}%";
+          format = "<big>{icon} </big> {capacity}%";
           format-charging = "  {capacity}%";
           format-plugged = "  {capacity}%";
           format-full = "{icon}  Full";
