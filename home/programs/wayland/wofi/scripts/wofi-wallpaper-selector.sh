@@ -84,10 +84,21 @@ if [ -n "$selected" ]; then
         # Update wallpaper with swww
         swww img $original_path --transition-type any --transition-fps 144
         
+        # Create blurred version for overlay backdrop
+        magick $original_path -filter Gaussian -resize 25% -define filter:sigma=3.5 -resize 400% $CACHE_DIR/blurred-wallpaper.png
+
+        # Set blurred overlay backdrop with swaybg
+        sway_pid=$(pidof swaybg)
+        swaybg -o "*" -i $CACHE_DIR/blurred-wallpaper.png -m fill &
+
+        if [[ -n $sway_pid ]]; then
+          # Kill old swaybg instance
+          kill $sway_pid
+        fi
+
         # Save the selection for persistence
         echo "$original_path" > "$HOME/.cache/current_wallpaper"
 
-        # Optional: Notify user
         notify-send "Wallpaper" "Wallpaper has been updated" -i "$original_path"
     else
         notify-send "Wallpaper Error" "Could not find the original wallpaper file."

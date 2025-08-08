@@ -174,7 +174,7 @@
       default-column-width = {fixed = 250;};
       default-window-height = {fixed = 350;};
     }
-    
+
     {
       matches = [
         { app-id = "vesktop"; }
@@ -184,10 +184,21 @@
       default-window-height = {fixed = 720;};
     }
   ];
+
+  layerRules = [
+    {
+      # Place swaybg on overlay backdrop
+      matches = [
+        { namespace = "^wallpaper$"; }
+      ];
+
+      place-within-backdrop = true;
+    }
+  ];
 in {
   programs.niri.settings = {
     window-rules = windowRules;
-    layer-rules = [];
+    layer-rules = layerRules;
   };
 }
 
