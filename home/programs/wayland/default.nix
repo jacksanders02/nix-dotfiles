@@ -5,6 +5,7 @@
     ./niri
     ./waybar
     ./wofi
+    ./swaync
   ];
   
   # ==== Wayland-Specific Packages ==== #
@@ -16,9 +17,6 @@
     # Utils
     wl-clipboard
     wtype
-    
-    # Notification Centre
-    swaynotificationcenter
     
     # Overview wallpaper
     swaybg

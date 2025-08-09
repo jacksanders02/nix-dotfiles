@@ -87,8 +87,9 @@ if [ -n "$selected" ]; then
         # Create blurred version for overlay backdrop
         magick $original_path -filter Gaussian -resize 25% -define filter:sigma=3.5 -resize 400% $CACHE_DIR/blurred-wallpaper.png
 
-        # Set blurred overlay backdrop with swaybg
+        # Restart required service
         systemctl --user restart swaybg.service
+        systemctl --user restart swaync.service
 
         # Save the selection for persistence
         echo "$original_path" > "$HOME/.cache/current_wallpaper"
