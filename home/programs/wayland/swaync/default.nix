@@ -68,7 +68,7 @@ in {
         };
         backlight = {
           label = "󰃠";
-          device = "amdgpu_bl0";
+          device = "amdgpu_bl1";
         };
         buttons-grid = {
           actions = [
