@@ -33,6 +33,7 @@
     "Mod+Return".action = spawn "${pkgs.kitty}/bin/kitty";
     "Mod+F".action = spawn "${pkgs.nautilus}/bin/nautilus";
     "Mod+W".action = spawn "${pkgs.firefox-devedition}/bin/firefox-devedition";
+    "Mod+L".action = spawn "${pkgs.swaylock-effects}/bin/swaylock";
 
     "Mod+U".action = spawn "env XDG_CURRENT_DESKTOP=gnome gnome-control-center";
     

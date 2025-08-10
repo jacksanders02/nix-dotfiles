@@ -6,6 +6,7 @@
     ./waybar
     ./wofi
     ./swaync
+    ./swaylock
   ];
   
   # ==== Wayland-Specific Packages ==== #

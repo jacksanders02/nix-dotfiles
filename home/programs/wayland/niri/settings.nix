@@ -30,6 +30,7 @@
         { command = ["swww-daemon"]; }
         { command = ["wl-paste" "--watch" "cliphist" "store"]; }
         { command = ["wl-paste" "--type text" "--watch" "cliphist" "store"]; }
+        { command = ["swaylock" "--grace" "0"]; }
       ];
 
       input = {
