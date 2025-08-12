@@ -28,6 +28,7 @@
     pwvucontrol # pavucontrol with pipewire instead of pulse
     pamixer
     resources
+    seahorse # Keychain viewer
     
     networkmanagerapplet # Edit nm connections with nm-connection-editor
   ];
