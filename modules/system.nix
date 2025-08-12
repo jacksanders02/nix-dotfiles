@@ -150,7 +150,7 @@
   # ==== Sway ==== #
   security.polkit.enable = true; # polkit
   services.gnome.gnome-keyring.enable = true; # secret service
-  security.pam.services.swaylock = {};
+  security.pam.services.swaylock.enableGnomeKeyring = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
