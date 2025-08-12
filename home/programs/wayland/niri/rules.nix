@@ -49,6 +49,7 @@
         {app-id = "firefox";}
         {app-id = "chromium-browser";}
         {app-id = "edge";}
+        {app-id = "code";}
       ];
       open-maximized = true;
     }
