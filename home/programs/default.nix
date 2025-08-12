@@ -4,6 +4,7 @@
     ./git.nix
     ./anyrun
     ./wayland
+    ./programming
     
     ./browsers/zen
     ./browsers/firefox
