@@ -5,12 +5,15 @@
     ./anyrun
     ./wayland
     ./programming
+    ./communication
     
     ./browsers/zen
     ./browsers/firefox
   ];
 
   home.packages = with pkgs; [
+    bitwarden
+  
     #==== Communication ====#
     vesktop
 

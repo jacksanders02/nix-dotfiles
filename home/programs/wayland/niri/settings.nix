@@ -9,6 +9,7 @@
     (rootPath + /services/swaybg.nix)
     (rootPath + /services/nm-applet.nix)
     (rootPath + /services/waybar.nix)
+    (rootPath + /services/bitwarden.nix)
   ];
 
   programs.niri = {

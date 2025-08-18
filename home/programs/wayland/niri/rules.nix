@@ -121,6 +121,8 @@
         { app-id = "org.kde.polkit-kde-authentication-agent-1"; }
         { app-id = "pinentry"; }
         { app-id = "vesktop"; }
+        { app-id = "Bitwarden"; }
+        { app-id = "thunderbird"; }
         { title = "Progress"; }
         { title = "File Operations"; }
         { title = "Copying"; }
@@ -143,6 +145,7 @@
         { app-id = "blueman-manager"; }
         { app-id = "nm-connection-editor"; }
         { app-id = "nm-applet"; }
+        { app-id = "Bitwarden"; }
       ];
       default-floating-position = {
         x = 6;
@@ -169,6 +172,14 @@
     
     {
       matches = [
+        { app-id = "Bitwarden"; }
+      ];
+      default-column-width = {fixed = 350;};
+      default-window-height = {fixed = 500;};
+    }
+    
+    {
+      matches = [
         { app-id = "nm-connection-editor"; }
         { app-id = "nm-applet"; }
       ];
@@ -179,6 +190,7 @@
     {
       matches = [
         { app-id = "vesktop"; }
+        { app-id = "thunderbird"; }
       ];
       
       default-column-width = {fixed = 1280;};
